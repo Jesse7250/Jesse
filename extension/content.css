@@ -1,0 +1,71 @@
+/* content.css —— 内容脚本注入样式
+ * 所有选择器使用 __ee_ext_ 前缀，避免与目标网站样式冲突。
+ */
+
+.__ee_ext_btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483646;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #4f7cff 0%, #6a5cff 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(79, 124, 255, 0.45);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+
+.__ee_ext_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 124, 255, 0.55);
+}
+
+.__ee_ext_btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(79, 124, 255, 0.4);
+}
+
+.__ee_ext_btn:disabled,
+.__ee_ext_btn.__ee_ext_loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+  transform: none;
+}
+
+/* 轻量提示气泡 */
+.__ee_ext_toast {
+  position: fixed;
+  left: 50%;
+  bottom: 80px;
+  z-index: 2147483647;
+  transform: translateX(-50%) translateY(8px);
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.__ee_ext_toast.__ee_ext_show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图片预览与下载</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <header class="toolbar">
+    <div class="toolbar-title">
+      <h1>图片预览与下载</h1>
+      <p id="pageTitle" class="toolbar-subtitle">商品详情页</p>
+    </div>
+
+    <div class="toolbar-actions">
+      <span id="selectedCount" class="selected-count">已选 0 张</span>
+      <button id="selectAllBtn" class="btn btn-ghost" type="button">全选</button>
+      <button id="invertBtn" class="btn btn-ghost" type="button">反选</button>
+      <button id="downloadBtn" class="btn btn-primary" type="button">下载选中</button>
+    </div>
+  </header>
+
+  <!-- 下载进度条 -->
+  <div id="progressWrap" class="progress-wrap" hidden>
+    <div class="progress-text">
+      <span id="progressLabel">正在下载…</span>
+      <span id="progressPercent">0%</span>
+    </div>
+    <div class="progress-bar">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- 结果反馈 -->
+  <div id="resultBar" class="result-bar" hidden></div>
+
+  <!-- 图片网格 -->
+  <main id="grid" class="grid"></main>
+
+  <!-- 空态 -->
+  <div id="emptyState" class="empty-state" hidden>
+    <p>未提取到图片</p>
+    <p class="empty-hint">请返回商品详情页，点击右下角「获取图片」按钮</p>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 ImageGrab · 一键提取电商详情页图片，批量下载 PNG</title>
+  <meta name="description" content="图提取 ImageGrab 是一款 Chrome 扩展，可在淘宝、京东、拼多多商家版商品详情页一键提取所有商品图片，网格化预览并批量下载为 PNG。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="top">
+
+  <!-- ============ 顶部导航栏 ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <!-- Logo：内联 SVG 图标 + 产品名 -->
+      <a class="logo" href="#top" aria-label="图提取 首页">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3" />
+            <circle cx="8.5" cy="9" r="1.6" />
+            <path d="M4 17l5-5 3 3 3.5-3.5L20 15" />
+          </svg>
+        </span>
+        <span class="logo-text">图提取<small>ImageGrab</small></span>
+      </a>
+
+      <!-- 锚点导航 -->
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a class="nav-link" href="#about">产品介绍</a>
+        <a class="nav-link" href="#features">核心功能</a>
+        <a class="nav-link" href="#install">安装步骤</a>
+        <a class="nav-link nav-cta-link" href="#download">下载插件</a>
+      </nav>
+
+      <!-- 移动端汉堡按钮 -->
+      <button class="hamburger" id="hamburger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ Hero 首屏区 ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">一键提取电商详情页所有图片<br /><span class="grad">批量下载为 PNG</span></h1>
+          <p class="hero-sub">图提取支持淘宝、京东、拼多多商家版，自动扫描页面内全部商品图片，网格化预览、自由勾选，一键保存到本地。</p>
+
+          <div class="hero-badges" aria-label="支持平台">
+            <span class="badge">淘宝</span>
+            <span class="badge">天猫</span>
+            <span class="badge">京东</span>
+            <span class="badge">拼多多</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#install">立即安装</a>
+            <a class="btn btn-ghost" href="#features">查看功能</a>
+          </div>
+        </div>
+
+        <!-- 插件界面示意图：纯 CSS 模拟画廊 + 悬浮按钮 -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup-toolbar">
+              <span class="mockup-dot red"></span><span class="mockup-dot yellow"></span><span class="mockup-dot green"></span>
+              <span class="mockup-title">图片预览与下载</span>
+            </div>
+            <div class="mockup-head">
+              <span class="mockup-count">已选 6 张</span>
+              <span class="mockup-btn">下载选中</span>
+            </div>
+            <div class="mockup-grid">
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#ffd9a0,#ff9a62)"></i></div>
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#a0e0ff,#62b8ff)"></i></div>
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#c3f0c0,#7adf7a)"></i></div>
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#ffc7e0,#ff7ab8)"></i></div>
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#e0d9ff,#a68bff)"></i></div>
+              <div class="cell"><span class="check"></span><i style="background:linear-gradient(135deg,#fff3b0,#ffd166)"></i></div>
+            </div>
+          </div>
+          <span class="float-btn">获取图片</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 产品介绍区 ============ -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">痛点与方案</span>
+          <h2 class="section-title">为什么需要「图提取」？</h2>
+          <p class="section-desc">电商详情页的图片往往分散在多个懒加载节点中，无法一键批量保存，且格式、命名不统一。</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </div>
+            <h3>图片分散难收集</h3>
+            <p>商品主图、详情长图、SKU 图散落在页面各处，手动右键保存效率极低。</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 12l3 3 5-6" />
+              </svg>
+            </div>
+            <h3>无法批量保存</h3>
+            <p>缺少统一的采集入口，逐张下载费时费力，还容易遗漏关键图片。</p>
+          </div>
+          <div class="about-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4" /><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+              </svg>
+            </div>
+            <h3>格式命名不统一</h3>
+            <p>JPG、WebP 混杂，文件名乱码，整理归档困难。图提取统一转 PNG 并自动编号。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 核心功能展示区 ============ -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">核心功能</span>
+          <h2 class="section-title">从提取到下载，一条龙搞定</h2>
+          <p class="section-desc">六个核心能力，覆盖商品素材采集的完整流程。</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.35-4.35" /></svg>
+            </div>
+            <h3>一键提取</h3>
+            <p>自动扫描页面所有商品图，兼容 srcset、data-src 等懒加载属性。</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v5l-4 2v-7L3 5z" /></svg>
+            </div>
+            <h3>智能过滤</h3>
+            <p>自动排除图标、logo、占位图及小于 100×100 的无效小图。</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>
+            </div>
+            <h3>集中预览</h3>
+            <p>新标签页网格化展示所有图片，附带尺寸信息，一目了然。</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 12l3 3 5-6" /></svg>
+            </div>
+            <h3>自由勾选</h3>
+            <p>支持全选、反选与按需勾选，只下载你真正需要的图片。</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2" /><circle cx="9" cy="10" r="1.5" /><path d="M4 16l4-4 3 3 3-3 6 5" /></svg>
+            </div>
+            <h3>统一 PNG</h3>
+            <p>自动将 JPG、WebP 等格式统一转换为 PNG，便于二次处理。</p>
+          </div>
+
+          <div class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4" /><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" /></svg>
+            </div>
+            <h3>批量下载</h3>
+            <p>一键保存到本地，文件名自动编号，下载过程带进度提示与结果反馈。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 安装步骤说明区 ============ -->
+    <section class="install" id="install">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-eyebrow">快速上手</span>
+          <h2 class="section-title">四步完成安装</h2>
+          <p class="section-desc">无需构建、无需登录，双击即可运行。</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-body">
+              <h3>下载并解压</h3>
+              <p>下载插件压缩包，解压到本地文件夹（如 <code>imagegrab/</code>）。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-body">
+              <h3>打开扩展管理页</h3>
+              <p>打开 Chrome，地址栏输入 <code>chrome://extensions</code> 回车。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-body">
+              <h3>开启开发者模式</h3>
+              <p>点击页面右上角的「开发者模式」开关。</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-body">
+              <h3>加载扩展</h3>
+              <p>点击「加载已解压的扩展程序」，选择刚才解压的文件夹即可。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ 底部 CTA ============ -->
+    <section class="cta" id="download">
+      <div class="container cta-inner reveal">
+        <h2>准备好一键提取商品图了吗？</h2>
+        <p>立即安装「图提取」，让商品素材采集变得简单高效。</p>
+        <a class="btn btn-primary btn-lg" href="#install">下载插件</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="16" rx="3" /><circle cx="8.5" cy="9" r="1.6" /><path d="M4 17l5-5 3 3 3.5-3.5L20 15" />
+          </svg>
+        </span>
+        <span>图提取 ImageGrab</span>
+      </div>
+      <div class="footer-meta">
+        <p>支持平台：淘宝 / 天猫 / 京东 / 拼多多商家版</p>
+        <p class="footer-links">
+          <a href="#">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">使用文档</a>
+        </p>
+        <p class="footer-copy">© 2026 图提取 ImageGrab · 仅用于个人素材采集，请遵守平台规范与版权要求。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

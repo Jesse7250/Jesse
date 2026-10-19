@@ -1,0 +1,13 @@
+# IDE / 工具内部目录
+.trae/
+.trae-html-share-packages/
+
+# 依赖与构建产物
+node_modules/
+dist/
+build/
+
+# 系统与编辑器文件
+.DS_Store
+Thumbs.db
+*.log
